@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Francis Chisom Ali — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a2647;
+    --mid:#144272;
+    --accent:#205295;
+    --signal:#39c2e0;
+    --bg:#eef3f9;
+    --paper:#ffffff;
+    --line:rgba(10,38,71,0.14);
+    --ink-soft:rgba(10,38,71,0.62);
+    --radius:10px;
+    --maxw:1080px;
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.mono,nav a,.tag,.meta,.btn,.logo{
+    font-family:'Space Grotesk',system-ui,sans-serif;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* focus visibility */
+  a:focus-visible,button:focus-visible,input:focus-visible{
+    outline:2px solid var(--signal);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:20px 0;
+    background:transparent;
+    transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+  }
+  header.solid{
+    background:var(--ink);
+    box-shadow:0 2px 18px rgba(10,38,71,0.25);
+    padding:13px 0;
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .logo{color:#fff;font-weight:600;font-size:1.05rem;letter-spacing:0.02em;text-decoration:none;white-space:nowrap;}
+  .logo span{color:var(--signal);}
+  .header-right{display:flex;align-items:center;gap:26px;}
+  nav{display:flex;align-items:center;gap:26px;}
+  nav a{color:rgba(255,255,255,0.82);text-decoration:none;font-size:0.94rem;font-weight:500;transition:color .2s ease;}
+  nav a:hover{color:#fff;}
+  .head-socials{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+  .head-socials a{display:flex;color:rgba(255,255,255,0.82);transition:color .2s ease, transform .2s ease;}
+  .head-socials a:hover{color:var(--signal);transform:translateY(-1px);}
+  .icon{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.5;}
+  .nav-toggle{display:none;}
+
+  @media (max-width:760px){
+    .header-right{gap:16px;}
+    nav{position:fixed;top:0;right:-100%;height:100vh;width:min(78vw,320px);
+      background:var(--ink);flex-direction:column;align-items:flex-start;
+      justify-content:center;gap:28px;padding:40px;transition:right .35s ease;}
+    nav.open{right:0;}
+    .nav-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:101;}
+    .nav-toggle span{width:22px;height:2px;background:#fff;display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:linear-gradient(160deg,var(--ink) 0%,var(--mid) 68%,var(--accent) 100%);
+    color:#fff;
+    display:flex;align-items:center;
+    overflow:hidden;
+    padding-top:80px;
+  }
+  #signal-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0.5;pointer-events:none;}
+  .hero-inner{position:relative;z-index:2;display:flex;align-items:center;gap:48px;flex-wrap:wrap;padding-top:60px;padding-bottom:60px;}
+  .avatar{
+    width:148px;height:148px;border-radius:50%;
+    border:1px solid rgba(255,255,255,0.35);
+    padding:5px;flex-shrink:0;
+  }
+  .avatar img{border-radius:50%;width:100%;height:100%;object-fit:cover;}
+  .hero-text{max-width:600px;}
+  .hero-role{
+    color:var(--signal);font-size:0.95rem;font-weight:500;letter-spacing:0.02em;margin:0 0 10px;
+  }
+  .hero-text h1{
+    font-size:clamp(2.1rem,4.2vw,3.1rem);
+    font-weight:700;margin:0 0 18px;line-height:1.12;
+  }
+  .hero-text p{
+    color:rgba(255,255,255,0.82);font-size:1.05rem;max-width:54ch;margin:0;
+  }
+  .scroll-cue{
+    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+    color:rgba(255,255,255,0.55);font-size:0.8rem;z-index:2;
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+  }
+  .scroll-cue::after{
+    content:"";width:1px;height:26px;background:rgba(255,255,255,0.45);
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:96px 0;}
+  .section-head{margin-bottom:44px;max-width:640px;}
+  .section-head h2{font-size:clamp(1.5rem,2.6vw,1.9rem);margin:0 0 10px;font-weight:600;}
+  .section-head p{color:var(--ink-soft);margin:0;font-size:0.98rem;}
+
+  /* scope-frame corner bracket motif */
+  .scope-frame{position:relative;}
+  .scope-frame::before,.scope-frame::after{
+    content:"";position:absolute;width:14px;height:14px;
+    border:1.5px solid var(--signal);opacity:0.85;pointer-events:none;
+  }
+  .scope-frame::before{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+  .scope-frame::after{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+
+  /* ---------- SKILLS ---------- */
+  #skills{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .skill-categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px 40px;}
+  .skill-category{min-width:0;}
+  .skill-cat-title{
+    margin:0 0 14px;font-size:0.82rem;font-weight:600;color:var(--ink-soft);
+    padding-bottom:8px;border-bottom:1px solid var(--line);
+  }
+  .skill-grid-row{display:flex;flex-wrap:wrap;gap:9px;}
+  .skill-pill{
+    border:1px solid var(--line);background:var(--bg);color:var(--mid);
+    padding:7px 14px;border-radius:999px;font-size:0.85rem;font-weight:500;
+  }
+
+  /* ---------- EXPERIENCE ---------- */
+  .timeline{position:relative;padding-left:26px;border-left:1.5px solid var(--line);}
+  .tl-item{position:relative;padding-bottom:38px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";position:absolute;left:-31px;top:4px;width:9px;height:9px;
+    border-radius:50%;background:var(--signal);border:2px solid var(--paper);
+    box-shadow:0 0 0 1.5px var(--signal);
+  }
+  .tl-meta{color:var(--ink-soft);font-size:0.8rem;font-weight:500;letter-spacing:0.01em;margin-bottom:5px;}
+  .tl-item h3{margin:0 0 8px;font-size:1.08rem;font-weight:600;}
+  .tl-item p{margin:0;color:var(--ink-soft);font-size:0.95rem;max-width:66ch;}
+
+  /* ---------- PROJECTS ---------- */
+  #projects{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .filter-bar{display:flex;flex-direction:column;gap:16px;margin-bottom:36px;}
+  .search-input{
+    width:100%;max-width:360px;padding:11px 16px;border-radius:8px;
+    border:1px solid var(--line);background:var(--bg);color:var(--ink);
+    font-family:'Inter',sans-serif;font-size:0.95rem;
+  }
+  .search-input:focus{border-color:var(--signal);}
+  .tag-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag-pill{
+    border:1px solid var(--line);background:var(--paper);color:var(--mid);
+    padding:6px 13px;border-radius:999px;font-size:0.82rem;font-weight:500;
+    cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease;
+  }
+  .tag-pill:hover{border-color:var(--signal);}
+  .tag-pill.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px;}
+  .card{
+    background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+  }
+  .card-img{width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--mid);}
+  .card-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:9px;flex:1;}
+  .card-body h3{margin:0;font-size:1.02rem;font-weight:600;}
+  .card-body p{margin:0;color:var(--ink-soft);font-size:0.89rem;flex:1;}
+  .card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+  .card-tag{
+    border:none;background:rgba(20,66,114,0.09);color:var(--mid);
+    padding:4px 10px;border-radius:999px;font-size:0.74rem;font-weight:500;cursor:pointer;
+  }
+  .card-tag:hover{background:var(--signal);color:#fff;}
+  .no-results{color:var(--ink-soft);font-size:0.95rem;padding:30px 0;text-align:center;grid-column:1/-1;}
+
+  /* ---------- CONTACT ---------- */
+  #contact{text-align:left;}
+  .contact-box{
+    background:var(--ink);color:#fff;border-radius:14px;padding:52px 48px;
+    display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:30px;
+  }
+  .contact-box h2{margin:0 0 8px;font-size:1.5rem;}
+  .contact-box p{margin:0;color:rgba(255,255,255,0.75);max-width:44ch;font-size:0.95rem;}
+  .btn{
+    display:inline-block;background:var(--signal);color:var(--ink);
+    padding:13px 26px;border-radius:8px;text-decoration:none;font-weight:600;
+    font-size:0.92rem;white-space:nowrap;transition:transform .18s ease,opacity .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .contact-socials{display:flex;gap:16px;margin-top:22px;}
+  .contact-socials a{color:rgba(255,255,255,0.75);transition:color .2s ease;}
+  .contact-socials a:hover{color:var(--signal);}
+
+  footer{padding:34px 0 44px;text-align:center;color:var(--ink-soft);font-size:0.84rem;}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap">
+    <a href="#top" class="logo">francis<span>.</span>ali</a>
+    <div class="header-right">
+      <nav id="siteNav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="head-socials" id="headSocials"></div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="signal-canvas"></canvas>
+  <div class="wrap hero-inner">
+    <div class="avatar"><img id="heroAvatar" alt="Profile picture"></div>
+    <div class="hero-text">
+      <p class="hero-role" id="heroRole"></p>
+      <h1 id="heroName"></h1>
+      <p id="heroBio"></p>
+    </div>
+  </div>
+  <div class="scroll-cue">scroll</div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>About</h2>
+      <p>Where the background comes from, and how it shapes the work.</p>
+    </div>
+    <p id="aboutBio" style="max-width:70ch;color:var(--ink-soft);font-size:1.02rem;"></p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Skills</h2>
+      <p>Languages, frameworks and tools used across production and freelance work.</p>
+    </div>
+    <div class="skill-categories" id="skillGrid"></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <p>Freelance contracts and open-source contributions, most recent context first.</p>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <p>Search by name or tag, or click a tag to filter the grid.</p>
+    </div>
+    <div class="filter-bar">
+      <input type="text" class="search-input" id="searchInput" placeholder="Search projects…" aria-label="Search projects">
+      <div class="tag-pills" id="tagPills"></div>
+    </div>
+    <div class="project-grid" id="projectGrid"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box scope-frame">
+      <div>
+        <h2>Contact</h2>
+        <p id="contactBlurb"></p>
+        <div class="contact-socials" id="contactSocials"></div>
+      </div>
+      <a class="btn" id="contactBtn" href="#">Email me</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p id="footerText"></p>
+</footer>
+
+<script>
+(function(){
+
+  /* ---------------- ICONS (original minimal line-art, not brand assets) ---------------- */
+  const ICONS = {
+    github: '<svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.2c0-.9.3-1.5.7-1.8-2.4-.3-5-1.2-5-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 1.1a10 10 0 0 1 5.4 0c2.1-1.4 3-1.1 3-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.7 1.1 2.9 0 4.1-2.6 5-5 5.3.4.4.7 1.1.7 2.2V21"/></svg>',
+    linkedin: '<svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><line x1="7.5" y1="10" x2="7.5" y2="16.5"/><circle cx="7.5" cy="7" r="0.6" fill="currentColor" stroke="none"/><path d="M11.3 16.5V10m0 2.2c0-1.5 1-2.4 2.3-2.4 1.4 0 2.2.9 2.2 2.5v4.2"/></svg>',
+    devto: '<svg class="icon" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5"/><path d="M7 9.2v5.6M7 9.2h1.6c.9 0 1.6.7 1.6 1.6v2.4c0 .9-.7 1.6-1.6 1.6H7M13.2 9.2v5.6h3M17 9.2v5.6c1.5 0 2.6-1.2 2.6-2.8 0-1.6-1.1-2.8-2.6-2.8Z"/></svg>',
+    website: '<svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.3 3.6 5.2 3.6 8.5s-1.2 6.2-3.6 8.5c-2.4-2.3-3.6-5.2-3.6-8.5S9.6 5.8 12 3.5Z"/></svg>',
+    twitter: '<svg class="icon" viewBox="0 0 24 24"><path d="M21 5.5c-.7.4-1.5.6-2.3.8a3.6 3.6 0 0 0-6.1 3.3A10.2 10.2 0 0 1 5.1 5.9a3.6 3.6 0 0 0 1.1 4.8c-.6 0-1.2-.2-1.7-.4v.1c0 1.8 1.3 3.2 2.9 3.6-.5.1-1.1.2-1.6.1.5 1.4 1.9 2.5 3.5 2.5A7.2 7.2 0 0 1 3 18.1a10.1 10.1 0 0 0 5.6 1.6c6.7 0 10.4-5.6 10.4-10.4v-.5c.7-.5 1.3-1.2 1.8-1.9-.7.3-1.4.5-2.1.6.8-.4 1.4-1.2 1.7-2Z"/></svg>'
+  };
+
+  function esc(s){
+    const d = document.createElement('div');
+    d.textContent = (s===undefined || s===null) ? '' : String(s);
+    return d.innerHTML;
+  }
+
+  /* ---------------- FALLBACK DATA (used if the fetch fails) ---------------- */
+  const AVATAR_SVG = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="#144272"/><text x="50%" y="54%" font-family="Space Grotesk, sans-serif" font-size="72" fill="#eef3f9" text-anchor="middle" dominant-baseline="middle">FA</text></svg>'
+  );
+
+  function placeholderImg(label, bg){
+    return 'data:image/svg+xml;utf8,' + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300"><rect width="480" height="300" fill="'+bg+'"/>' +
+      '<path d="M0 190 Q60 140 120 190 T240 190 T360 190 T480 190" stroke="#39c2e0" stroke-width="3" fill="none" opacity="0.55"/>' +
+      '<text x="30" y="250" font-family="Space Grotesk, sans-serif" font-size="22" fill="#eef3f9" opacity="0.9">'+label+'</text></svg>'
+    );
+  }
+
+  const FALLBACK_DATA = {
+    name: "Francis Chisom Ali",
+    role: "Software Engineer — Backend, Systems & Cross-Platform Development",
+    bio: "Over five years building software for people — REST APIs and backend systems, cross-platform desktop apps, and Android applications. A mechatronics engineering background isn't incidental; it shapes how software gets approached, as a system with moving parts that have to talk to each other reliably. That's led into programming ESP32 microcontrollers for IoT pipelines, building FFT-based audio processing into a live Android app, running local LLM inference with Llama.cpp, and writing C++/Python interop layers for a custom HTML renderer.",
+    profilePicture: AVATAR_SVG,
+    email: "francisali692@gmail.com",
+    contactBlurb: "Open to backend, systems, and cross-platform engineering work — freelance or full-time.",
+    socials: [
+      { platform: "github", url: "https://github.com/francisA88" },
+      { platform: "linkedin", url: "https://linkedin.com/in/francis-ali-b95880190" },
+      { platform: "devto", url: "https://dev.to/thebackendfrancium" }
+    ],
+    skills: [
+      { category: "Languages", items: ["Python","C++","JavaScript","HTML","CSS","R","Java"] },
+      { category: "Backend Development", items: ["Django","Flask","Django REST Framework","Celery","Redis","REST API Design"] },
+      { category: "Databases", items: ["PostgreSQL","SQLite","SQLAlchemy","Pandas"] },
+      { category: "Desktop & Mobile", items: ["Kivy","Android (via Kivy)","Flutter"] },
+      { category: "AI / ML & Systems", items: ["Llama.cpp","Whisper.cpp","TesseractOCR","Hugging Face","NumPy","SciPy","FFT"] },
+      { category: "IoT & Embedded", items: ["MQTT","Mosquitto","ESP32","Hardware Firmware Programming"] },
+      { category: "Tools & Platforms", items: ["Git","GitHub","Docker","Google Cloud API","Google OAuth","BeautifulSoup4","Pillow"] }
+    ],
+    experience: [
+      {
+        title: "Software Engineer — Fire Safety Regulatory Document Clause Comparison (ML)",
+        meta: "Freelance Contract",
+        description: "Built a parser extracting sections, subsections and clauses from UK fire safety regulation documents with 95%+ structural accuracy, then used a Sentence Transformer model for embeddings and semantic clause comparison, backed by a relational database and a Vue.js interface, deployed on Hugging Face Spaces."
+      },
+      {
+        title: "Data Analyst — Bank Fraud Classification",
+        meta: "Freelance Contract",
+        description: "Analysed a financial dataset in R to classify fraudulent transactions using statistical methods, and produced visual reports communicating the results to a non-technical client."
+      },
+      {
+        title: "Data Scraping — Email Pattern Extraction",
+        meta: "Freelance Contract",
+        description: "Scraped 300+ websites with BeautifulSoup to identify email address patterns, manually distinguishing genuine addresses from look-alike text, and delivered results in CSV and Excel via Pandas."
+      },
+      {
+        title: "Open Source — amqtt Android Compatibility Fix",
+        meta: "August 2026",
+        description: "Identified that amqtt's hard dependency on psutil — used only by a bundled plugin — broke installation on Android, then filed an issue and submitted a pull request; the maintainer scheduled the dependency for deprecation."
+      }
+    ],
+    projects: [
+      {
+        image: placeholderImg("Websurface.py", "#0a2647"),
+        title: "Websurface.py",
+        description: "A C++/Python interop layer using the Ultralight rendering engine, bringing full HTML/CSS rendering into a Kivy desktop app by mapping an off-screen texture onto Kivy's canvas.",
+        tags: ["Python","C++","Kivy","Interop"]
+      },
+      {
+        image: placeholderImg("Autosink", "#144272"),
+        title: "Autosink",
+        description: "A distributed file monitoring system that logs creation, modification and deletion events via Celery workers and Redis, with MQTT event propagation and a Flask dashboard.",
+        tags: ["Python","Celery","Redis","MQTT"]
+      },
+      {
+        image: placeholderImg("AceFret", "#205295"),
+        title: "AceFret",
+        description: "A cross-platform guitar fretboard trainer using real-time FFT-based pitch detection on live microphone input, with flashcard prompts and a time-challenge mechanic.",
+        tags: ["Python","Kivy","FFT","Audio"]
+      },
+      {
+        image: placeholderImg("Beryl", "#0a2647"),
+        title: "Beryl",
+        description: "A Django web app letting students photograph a past exam question and retrieve matching solutions, using OCR to extract text and a BeautifulSoup4 pipeline to search the web.",
+        tags: ["Django","OCR","BeautifulSoup"]
+      },
+      {
+        image: placeholderImg("IoT Monitoring", "#144272"),
+        title: "IoT Monitoring & Control System",
+        description: "A collaborative real-time sensor monitoring and remote hardware control system built on ESP32 firmware publishing over MQTT, with a web dashboard for live control.",
+        tags: ["ESP32","MQTT","Flask","Hardware"]
+      },
+      {
+        image: placeholderImg("Multi-Agent LLM", "#205295"),
+        title: "Multi-Agent LLM Conversation System",
+        description: "A threaded framework running two local LLM instances in an autonomous, open-ended conversation, using quantised Llama-3.2 GGUF models via Llama.cpp entirely offline.",
+        tags: ["Python","Llama.cpp","LLM","Threading"]
+      },
+      {
+        image: placeholderImg("Whisper STT", "#0a2647"),
+        title: "Whisper STT Tool",
+        description: "An offline speech-to-text transcription tool wrapping Whisper.cpp with a simple Python interface.",
+        tags: ["Python","Whisper.cpp","Audio"]
+      },
+      {
+        image: placeholderImg("Solfer", "#144272"),
+        title: "Solfer",
+        description: "A web app for tonic solfa notation training with real-time feedback and WAV export for paid users, in progress.",
+        tags: ["Flask","PostgreSQL","ToneJS","Audio"]
+      }
+    ],
+    footer: "Designed and built by Francis Chisom Ali."
+  };
+
+  const DATA_URL = "https://raw.githubusercontent.com/francisA88/portfolio-data/main/data.json";
+
+  /* ---------------- RENDER ---------------- */
+  function socialIconLink(s, extraClass){
+    const icon = ICONS[s.platform] || ICONS.website;
+    const a = document.createElement('a');
+    a.href = s.url; a.target = "_blank"; a.rel = "noopener noreferrer";
+    a.setAttribute('aria-label', s.platform);
+    if(extraClass) a.className = extraClass;
+    a.innerHTML = icon;
+    return a;
+  }
+
+  function render(data){
+    document.getElementById('heroAvatar').src = data.profilePicture;
+    document.getElementById('heroRole').textContent = data.role;
+    document.getElementById('heroName').textContent = data.name;
+    document.getElementById('heroBio').textContent = data.bio;
+    document.getElementById('aboutBio').textContent = data.bio;
+    document.title = data.name + " — " + data.role;
+
+    const headSocials = document.getElementById('headSocials');
+    const contactSocials = document.getElementById('contactSocials');
+    headSocials.innerHTML = ''; contactSocials.innerHTML = '';
+    (data.socials||[]).forEach(s=>{
+      headSocials.appendChild(socialIconLink(s));
+      contactSocials.appendChild(socialIconLink(s));
+    });
+
+    const skillGrid = document.getElementById('skillGrid');
+    skillGrid.innerHTML = '';
+    (data.skills||[]).forEach(cat=>{
+      const block = document.createElement('div');
+      block.className = 'skill-category';
+      const title = document.createElement('h3');
+      title.className = 'skill-cat-title';
+      title.textContent = cat.category;
+      const row = document.createElement('div');
+      row.className = 'skill-grid-row';
+      (cat.items||[]).forEach(sk=>{
+        const pill = document.createElement('span');
+        pill.className = 'skill-pill';
+        pill.textContent = sk;
+        row.appendChild(pill);
+      });
+      block.append(title, row);
+      skillGrid.appendChild(block);
+    });
+
+    const timeline = document.getElementById('timeline');
+    timeline.innerHTML = '';
+    (data.experience||[]).forEach(exp=>{
+      const item = document.createElement('div');
+      item.className = 'tl-item';
+      const meta = document.createElement('div'); meta.className='tl-meta'; meta.textContent = exp.meta;
+      const h = document.createElement('h3'); h.textContent = exp.title;
+      const p = document.createElement('p'); p.textContent = exp.description;
+      item.append(meta,h,p);
+      timeline.appendChild(item);
+    });
+
+    const emailBtn = document.getElementById('contactBtn');
+    emailBtn.href = "mailto:" + data.email;
+    document.getElementById('contactBlurb').textContent = data.contactBlurb;
+    document.getElementById('footerText').textContent = data.footer;
+
+    initProjects(data.projects||[]);
+  }
+
+  /* ---------------- PROJECTS: search + tag filter ---------------- */
+  function initProjects(projects){
+    const grid = document.getElementById('projectGrid');
+    const pillWrap = document.getElementById('tagPills');
+    const searchInput = document.getElementById('searchInput');
+
+    const allTags = Array.from(new Set(projects.flatMap(p=>p.tags||[])));
+    let activeTag = null;
+    let query = '';
+
+    function buildPills(){
+      pillWrap.innerHTML = '';
+      const allPill = document.createElement('button');
+      allPill.type='button'; allPill.className = 'tag-pill' + (activeTag===null?' active':'');
+      allPill.textContent = 'All';
+      allPill.addEventListener('click', ()=>{ activeTag=null; buildPills(); renderGrid(); });
+      pillWrap.appendChild(allPill);
+
+      allTags.forEach(tag=>{
+        const btn = document.createElement('button');
+        btn.type='button';
+        btn.className = 'tag-pill' + (activeTag===tag?' active':'');
+        btn.textContent = tag;
+        btn.addEventListener('click', ()=>{ activeTag = (activeTag===tag)?null:tag; buildPills(); renderGrid(); });
+        pillWrap.appendChild(btn);
+      });
+    }
+
+    function matches(p){
+      const q = query.trim().toLowerCase();
+      const inQuery = !q || p.title.toLowerCase().includes(q) || (p.tags||[]).some(t=>t.toLowerCase().includes(q));
+      const inTag = !activeTag || (p.tags||[]).includes(activeTag);
+      return inQuery && inTag;
+    }
+
+    function renderGrid(){
+      grid.innerHTML = '';
+      const filtered = projects.filter(matches);
+      if(filtered.length === 0){
+        const msg = document.createElement('div');
+        msg.className = 'no-results';
+        msg.textContent = 'No projects match that search — try a different term or clear the tag filter.';
+        grid.appendChild(msg);
+        return;
+      }
+      filtered.forEach(p=>{
+        const card = document.createElement('div');
+        card.className = 'card scope-frame';
+
+        const img = document.createElement('img');
+        img.className = 'card-img'; img.src = p.image; img.alt = p.title;
+
+        const body = document.createElement('div'); body.className = 'card-body';
+        const h3 = document.createElement('h3'); h3.textContent = p.title;
+        const desc = document.createElement('p'); desc.textContent = p.description;
+        const tagRow = document.createElement('div'); tagRow.className = 'card-tags';
+        (p.tags||[]).forEach(t=>{
+          const tb = document.createElement('button');
+          tb.type='button'; tb.className='card-tag'; tb.textContent = t;
+          tb.addEventListener('click', ()=>{ activeTag = t; buildPills(); renderGrid(); });
+          tagRow.appendChild(tb);
+        });
+        body.append(h3, desc, tagRow);
+        card.append(img, body);
+        grid.appendChild(card);
+      });
+    }
+
+    searchInput.addEventListener('input', (e)=>{ query = e.target.value; renderGrid(); });
+
+    buildPills();
+    renderGrid();
+  }
+
+  /* ---------------- FETCH WITH FALLBACK ---------------- */
+  fetch(DATA_URL, {cache:"no-store"})
+    .then(r=>{ if(!r.ok) throw new Error('bad response'); return r.json(); })
+    .then(data=>render(data))
+    .catch(()=>render(FALLBACK_DATA));
+
+  /* ---------------- HEADER SCROLL STATE ---------------- */
+  const header = document.getElementById('site-header');
+  function onScroll(){
+    if(window.scrollY > window.innerHeight * 0.72){ header.classList.add('solid'); }
+    else { header.classList.remove('solid'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* mobile nav toggle */
+  const navToggle = document.getElementById('navToggle');
+  const nav = document.getElementById('siteNav');
+  navToggle.addEventListener('click', ()=>{
+    const open = nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>nav.classList.remove('open')));
+
+  /* ---------------- AMBIENT SIGNAL CANVAS ---------------- */
+  const canvas = document.getElementById('signal-canvas');
+  const ctx = canvas.getContext('2d');
+  let W,H, mouseX=0.5, mouseY=0.5, targetX=0.5, targetY=0.5;
+
+  function resize(){
+    const hero = canvas.closest('.hero');
+    W = canvas.width = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  canvas.closest('.hero').addEventListener('mousemove', (e)=>{
+    const rect = canvas.getBoundingClientRect();
+    targetX = (e.clientX - rect.left) / rect.width;
+    targetY = (e.clientY - rect.top) / rect.height;
+  });
+
+  const traces = [
+    { amp: 26, freq: 0.012, speed: 0.014, phase: 0,   color:'rgba(57,194,224,0.55)' },
+    { amp: 40, freq: 0.008, speed: 0.010, phase: 2.1, color:'rgba(57,194,224,0.30)' },
+    { amp: 18, freq: 0.020, speed: 0.020, phase: 4.4, color:'rgba(255,255,255,0.18)' }
+  ];
+  let t = 0;
+  let reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    mouseX += (targetX-mouseX)*0.03;
+    mouseY += (targetY-mouseY)*0.03;
+    const parX = (mouseX-0.5) * 40;
+    const parY = (mouseY-0.5) * 24;
+
+    traces.forEach((tr, i)=>{
+      ctx.beginPath();
+      ctx.strokeStyle = tr.color;
+      ctx.lineWidth = 1.4;
+      const baseY = H * (0.3 + i*0.22) + parY * (i+1) * 0.4;
+      for(let x=0; x<=W; x+=6){
+        const y = baseY + Math.sin(x*tr.freq + t*tr.speed + tr.phase + parX*0.01) * (tr.amp + parY*0.05);
+        if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+    });
+    t += 1;
+    if(!reduced) requestAnimationFrame(draw);
+  }
+  draw();
+
+})();
+</script>
+</body>
+</html>

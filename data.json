@@ -1,0 +1,113 @@
+{
+  "name": "Francis Chisom Ali",
+  "role": "Software Engineer — Backend & Systems, Cross-Platform Development",
+  "bio": "Over 5 years of hands-on software development building for people — from backend web systems and REST APIs to cross-platform desktop apps and Android applications. A Mechatronics Engineering background isn't incidental; it shapes how software gets approached, as a system with moving parts that have to talk to each other reliably. That's led into programming ESP32 microcontrollers for IoT pipelines, building FFT-based audio processing into a live Android app, running local LLM inference with Llama.cpp, and writing C++/Python interop layers for a custom HTML renderer. On the more conventional side: Django, Flask, Celery, Redis and PostgreSQL on the backend, Kivy and Java for desktop and Android.",
+  "profilePicture": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27200%27%20height%3D%27200%27%3E%3Crect%20width%3D%27200%27%20height%3D%27200%27%20fill%3D%27%23144272%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2754%25%27%20font-family%3D%27Space%20Grotesk%2C%20sans-serif%27%20font-size%3D%2772%27%20fill%3D%27%23eef3f9%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EFA%3C%2Ftext%3E%3C%2Fsvg%3E",
+  "email": "francisali692@gmail.com",
+  "contactBlurb": "Open to backend, systems, and cross-platform engineering work — freelance or full-time.",
+  "socials": [
+    { "platform": "github", "url": "https://github.com/francisA88" },
+    { "platform": "linkedin", "url": "https://linkedin.com/in/francis-ali-b95880190" },
+    { "platform": "devto", "url": "https://dev.to/thebackendfrancium" }
+  ],
+  "skills": [
+    { "category": "Languages", "items": ["Python", "C++", "JavaScript", "HTML", "CSS", "R", "Java"] },
+    { "category": "Backend Development", "items": ["Django", "Flask", "Django REST Framework", "Celery", "Redis", "REST API Design"] },
+    { "category": "Databases", "items": ["PostgreSQL", "SQLite", "SQLAlchemy", "Pandas"] },
+    { "category": "Desktop & Mobile", "items": ["Kivy", "Android (via Kivy)", "Flutter"] },
+    { "category": "AI / ML & Systems", "items": ["Llama.cpp", "Whisper.cpp", "TesseractOCR", "Hugging Face", "NumPy", "SciPy", "FFT"] },
+    { "category": "IoT & Embedded", "items": ["MQTT", "Mosquitto", "ESP32", "Hardware Firmware Programming"] },
+    { "category": "Tools & Platforms", "items": ["Git", "GitHub", "Docker", "Google Cloud API", "Google OAuth", "BeautifulSoup4", "Pillow"] }
+  ],
+  "experience": [
+    {
+      "title": "Fire Safety Regulatory Document Clause Comparison (ML)",
+      "meta": "Software Engineer — Freelance Contract",
+      "description": "Built a parser extracting Sections, Subsections and Clauses from UK fire safety regulation documents with 95%+ structural accuracy, generated embeddings with a Mini-LM Sentence Transformer for semantic clause comparison, and designed a relational database behind a Vue.js web interface, deployed on Hugging Face Spaces using Agile methodology."
+    },
+    {
+      "title": "Bank Fraud Classification",
+      "meta": "Data Analyst — Freelance Contract",
+      "description": "Analysed a financial dataset in R to classify fraudulent transactions using statistical methods, and produced visual reports and graphs communicating the results clearly to a non-technical client."
+    },
+    {
+      "title": "Email Scraping",
+      "meta": "Data Scraper — Freelance Contract",
+      "description": "Scraped 300+ websites with BeautifulSoup to extract email address patterns, manually distinguishing genuine addresses from look-alike text, and delivered results in CSV and Excel format using Pandas."
+    },
+    {
+      "title": "amqtt — Android Compatibility Fix",
+      "meta": "Open Source Contribution — August 2026",
+      "description": "Identified that amqtt's hard dependency on Psutil — used only by a bundled plugin — was breaking installation on Android, then filed an issue and submitted a pull request; the maintainer scheduled the dependency for deprecation in a future release."
+    }
+  ],
+  "projects": [
+    {
+      "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27480%27%20height%3D%27300%27%3E%3Crect%20width%3D%27480%27%20height%3D%27300%27%20fill%3D%27%230a2647%27%2F%3E%3Cpath%20d%3D%27M0%20190%20Q60%20140%20120%20190%20T240%20190%20T360%20190%20T480%20190%27%20stroke%3D%27%2339c2e0%27%20stroke-width%3D%273%27%20fill%3D%27none%27%20opacity%3D%270.55%27%2F%3E%3Ctext%20x%3D%2730%27%20y%3D%27250%27%20font-family%3D%27Space%20Grotesk%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23eef3f9%27%20opacity%3D%270.9%27%3EWebsurface.py%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "title": "Websurface.py",
+      "description": "A custom HTML rendering surface embedded in a Python/Kivy app: a C++/Python interop layer using the Ultralight rendering engine renders HTML to an off-screen buffer, mapped directly onto Kivy's canvas for live web content in a native Python GUI.",
+      "tags": ["Python", "C++", "Kivy", "Ultralight"]
+    },
+    {
+      "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27480%27%20height%3D%27300%27%3E%3Crect%20width%3D%27480%27%20height%3D%27300%27%20fill%3D%27%23144272%27%2F%3E%3Cpath%20d%3D%27M0%20190%20Q60%20140%20120%20190%20T240%20190%20T360%20190%20T480%20190%27%20stroke%3D%27%2339c2e0%27%20stroke-width%3D%273%27%20fill%3D%27none%27%20opacity%3D%270.55%27%2F%3E%3Ctext%20x%3D%2730%27%20y%3D%27250%27%20font-family%3D%27Space%20Grotesk%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23eef3f9%27%20opacity%3D%270.9%27%3EAutosink%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "title": "Autosink",
+      "description": "A distributed file monitoring and event tracking system with remote access: detects and logs file creation, modification and deletion events via Celery workers and Redis, persists an audit trail to SQLite, propagates events over MQTT, and exposes a Flask web dashboard.",
+      "tags": ["Python", "Celery", "Redis", "MQTT"]
+    },
+    {
+      "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27480%27%20height%3D%27300%27%3E%3Crect%20width%3D%27480%27%20height%3D%27300%27%20fill%3D%27%23205295%27%2F%3E%3Cpath%20d%3D%27M0%20190%20Q60%20140%20120%20190%20T240%20190%20T360%20190%20T480%20190%27%20stroke%3D%27%2339c2e0%27%20stroke-width%3D%273%27%20fill%3D%27none%27%20opacity%3D%270.55%27%2F%3E%3Ctext%20x%3D%2730%27%20y%3D%27250%27%20font-family%3D%27Space%20Grotesk%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23eef3f9%27%20opacity%3D%270.9%27%3EAceFret%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "title": "AceFret",
+      "description": "A cross-platform music education app training guitarists to identify and locate fretboard notes in real time, using FFT-based pitch detection on live microphone input, TarsosDSP on Android and a NumPy/SciPy pipeline on desktop, with flashcard prompts and a time-challenge mechanic.",
+      "tags": ["Python", "Kivy", "FFT", "Audio"]
+    },
+    {
+      "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27480%27%20height%3D%27300%27%3E%3Crect%20width%3D%27480%27%20height%3D%27300%27%20fill%3D%27%230a2647%27%2F%3E%3Cpath%20d%3D%27M0%20190%20Q60%20140%20120%20190%20T240%20190%20T360%20190%20T480%20190%27%20stroke%3D%27%2339c2e0%27%20stroke-width%3D%273%27%20fill%3D%27none%27%20opacity%3D%270.55%27%2F%3E%3Ctext%20x%3D%2730%27%20y%3D%27250%27%20font-family%3D%27Space%20Grotesk%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23eef3f9%27%20opacity%3D%270.9%27%3EBeryl%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "title": "Beryl",
+      "description": "A Django web app letting students photograph or upload a past exam question and retrieve matching solutions from the web. OCR extracts text from the image, feeding a BeautifulSoup4 scraping pipeline, with a frontend built for minimal friction on the core search workflow.",
+      "tags": ["Django", "OCR", "BeautifulSoup"]
+    },
+    {
+      "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27480%27%20height%3D%27300%27%3E%3Crect%20width%3D%27480%27%20height%3D%27300%27%20fill%3D%27%23144272%27%2F%3E%3Cpath%20d%3D%27M0%20190%20Q60%20140%20120%20190%20T240%20190%20T360%20190%20T480%20190%27%20stroke%3D%27%2339c2e0%27%20stroke-width%3D%273%27%20fill%3D%27none%27%20opacity%3D%270.55%27%2F%3E%3Ctext%20x%3D%2730%27%20y%3D%27250%27%20font-family%3D%27Space%20Grotesk%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23eef3f9%27%20opacity%3D%270.9%27%3EIoT%20Monitoring%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "title": "IoT Monitoring & Control System",
+      "description": "A collaborative real-time sensor monitoring and remote hardware control system: ESP32 firmware reads sensor input and publishes over MQTT to a central broker, with a web dashboard for live data visualisation and remote control, including dynamic lamp brightness adjustment.",
+      "tags": ["ESP32", "MQTT", "Flask", "Hardware"]
+    },
+    {
+      "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27480%27%20height%3D%27300%27%3E%3Crect%20width%3D%27480%27%20height%3D%27300%27%20fill%3D%27%23205295%27%2F%3E%3Cpath%20d%3D%27M0%20190%20Q60%20140%20120%20190%20T240%20190%20T360%20190%20T480%20190%27%20stroke%3D%27%2339c2e0%27%20stroke-width%3D%273%27%20fill%3D%27none%27%20opacity%3D%270.55%27%2F%3E%3Ctext%20x%3D%2730%27%20y%3D%27250%27%20font-family%3D%27Space%20Grotesk%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23eef3f9%27%20opacity%3D%270.9%27%3EMulti-Agent%20LLM%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "title": "Multi-Agent LLM Conversation System",
+      "description": "An autonomous two-model conversation framework for observing emergent LLM behaviour: a threaded Python system lets two local LLM instances converse open-endedly on a topic, running entirely offline via Llama.cpp on a quantised Llama-3.2-1B GGUF model from Hugging Face.",
+      "tags": ["Python", "Llama.cpp", "LLM", "Threading"]
+    },
+    {
+      "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27480%27%20height%3D%27300%27%3E%3Crect%20width%3D%27480%27%20height%3D%27300%27%20fill%3D%27%230a2647%27%2F%3E%3Cpath%20d%3D%27M0%20190%20Q60%20140%20120%20190%20T240%20190%20T360%20190%20T480%20190%27%20stroke%3D%27%2339c2e0%27%20stroke-width%3D%273%27%20fill%3D%27none%27%20opacity%3D%270.55%27%2F%3E%3Ctext%20x%3D%2730%27%20y%3D%27250%27%20font-family%3D%27Space%20Grotesk%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23eef3f9%27%20opacity%3D%270.9%27%3EWhisper%20STT%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "title": "Whisper STT Tool",
+      "description": "An offline speech-to-text transcription tool wrapping Whisper.cpp with a simple Python interface.",
+      "tags": ["Python", "Whisper.cpp", "Audio"]
+    },
+    {
+      "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27480%27%20height%3D%27300%27%3E%3Crect%20width%3D%27480%27%20height%3D%27300%27%20fill%3D%27%23144272%27%2F%3E%3Cpath%20d%3D%27M0%20190%20Q60%20140%20120%20190%20T240%20190%20T360%20190%20T480%20190%27%20stroke%3D%27%2339c2e0%27%20stroke-width%3D%273%27%20fill%3D%27none%27%20opacity%3D%270.55%27%2F%3E%3Ctext%20x%3D%2730%27%20y%3D%27250%27%20font-family%3D%27Space%20Grotesk%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23eef3f9%27%20opacity%3D%270.9%27%3ECalibration%20Chart%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "title": "Calibration Chart Organiser",
+      "description": "An OCR-based document classification tool built for a logistics and calibration firm, using Tesseract OCR and Pillow with a Kivy interface.",
+      "tags": ["Python", "OCR", "Kivy"]
+    },
+    {
+      "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27480%27%20height%3D%27300%27%3E%3Crect%20width%3D%27480%27%20height%3D%27300%27%20fill%3D%27%23205295%27%2F%3E%3Cpath%20d%3D%27M0%20190%20Q60%20140%20120%20190%20T240%20190%20T360%20190%20T480%20190%27%20stroke%3D%27%2339c2e0%27%20stroke-width%3D%273%27%20fill%3D%27none%27%20opacity%3D%270.55%27%2F%3E%3Ctext%20x%3D%2730%27%20y%3D%27250%27%20font-family%3D%27Space%20Grotesk%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23eef3f9%27%20opacity%3D%270.9%27%3ESolfer%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "title": "Solfer",
+      "description": "A web app for tonic solfa notation training with real-time feedback and WAV export for paid users. In progress.",
+      "tags": ["Flask", "PostgreSQL", "ToneJS", "Audio"]
+    },
+    {
+      "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27480%27%20height%3D%27300%27%3E%3Crect%20width%3D%27480%27%20height%3D%27300%27%20fill%3D%27%230a2647%27%2F%3E%3Cpath%20d%3D%27M0%20190%20Q60%20140%20120%20190%20T240%20190%20T360%20190%20T480%20190%27%20stroke%3D%27%2339c2e0%27%20stroke-width%3D%273%27%20fill%3D%27none%27%20opacity%3D%270.55%27%2F%3E%3Ctext%20x%3D%2730%27%20y%3D%27250%27%20font-family%3D%27Space%20Grotesk%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23eef3f9%27%20opacity%3D%270.9%27%3ECSV%20Sync%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "title": "CSV → Google Sheets Sync Tool",
+      "description": "A utility for instantly backing up local CSV data to Google Sheets via the Google Cloud API with OAuth authentication.",
+      "tags": ["Python", "Google Cloud API", "Pandas"]
+    },
+    {
+      "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27480%27%20height%3D%27300%27%3E%3Crect%20width%3D%27480%27%20height%3D%27300%27%20fill%3D%27%23144272%27%2F%3E%3Cpath%20d%3D%27M0%20190%20Q60%20140%20120%20190%20T240%20190%20T360%20190%20T480%20190%27%20stroke%3D%27%2339c2e0%27%20stroke-width%3D%273%27%20fill%3D%27none%27%20opacity%3D%270.55%27%2F%3E%3Ctext%20x%3D%2730%27%20y%3D%27250%27%20font-family%3D%27Space%20Grotesk%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23eef3f9%27%20opacity%3D%270.9%27%3EWiFi%20LAN%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "title": "WiFi LAN Communicator",
+      "description": "An offline desktop calling application for local corporate environments, using socket-based peer communication. In progress.",
+      "tags": ["Python", "Sockets", "Kivy"]
+    }
+  ],
+  "footer": "Designed and built by Francis Chisom Ali."
+}
