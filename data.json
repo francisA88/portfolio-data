@@ -49,7 +49,7 @@
       "tags": ["Python", "C++", "Kivy", "Ultralight"]
     },
     {
-      "image": "https://raw.githubusercontent.com/portfolio-data/refs/heads/main/autosink.jpg",
+      "image": "https://raw.githubusercontent.com/francisA88/portfolio-data/refs/heads/main/autosink.jpg",
       "title": "Autosink",
       "description": "A file monitoring and event tracking system with remote access: detects and logs file creation, modification and deletion events via Watchdog system event listeners, persists an audit trail to SQLite, propagates events over MQTT, and exposes a Flask web dashboard.",
       "tags": ["Python", "Flask", "MQTT", "Amqtt"]
